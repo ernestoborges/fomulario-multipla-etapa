@@ -1,14 +1,10 @@
 import "./styles.css"
 import { useNavigate } from "react-router-dom"
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import UserDataContext from "../../context/UserDataProvider";
 export function SuccessPage(){
     const navigate = useNavigate();
     const {userData, setUserData} = useContext(UserDataContext)
-
-    useEffect(()=>{
-        console.log(userData);
-    })
 
     function handdleNewUserClick(){
         setUserData(() => (

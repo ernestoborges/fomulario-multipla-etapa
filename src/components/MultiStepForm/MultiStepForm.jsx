@@ -1,10 +1,13 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
+import UserDataContext from "../../context/UserDataProvider";
 import { AboutYou } from "../FormSteps/AboutYou";
 import { UserAddress } from "../FormSteps/UserAddress";
 import { UserIdentification } from "../FormSteps/UserIdentification"
 import "./styles.css"
 export function MultiStepForm(){
+
+    const userData = useContext(UserDataContext).userData
 
     // used to navigate to "Usuário criado" page
     const navigate = useNavigate();
@@ -50,10 +53,12 @@ export function MultiStepForm(){
     }
 
     // go to next step
-    function handleNextStep(){
+    function handleNextStep(e){
         if(formStep < formTitles.length - 1 && formStep >= 0){
             setIsFirstAttempt(true);
             setFormStep(formStep + 1)
+        } else if(formStep === formTitles.length - 1){
+            e.target.form.requestSubmit()
         }
     }
 
@@ -63,6 +68,17 @@ export function MultiStepForm(){
             setIsFirstAttempt(false);
             setFormStep(formStep - 1)
         }
+    }
+
+    // go to previous step
+    function handleFormSubmit(e){
+        e.preventDefault();
+
+        //fake submit
+        console.log(userData);
+
+        // go to success page
+        navigate("/success");
     }
 
     // used to lock or not user on page until all inputs on specific page are valid
@@ -120,7 +136,7 @@ export function MultiStepForm(){
     }
 
     return (
-    <form className="card">
+    <form className="card" onSubmit={(e) => handleFormSubmit(e)}>
         <header>
             <h1>Criação de usuário</h1>
         </header>
@@ -150,9 +166,7 @@ export function MultiStepForm(){
                 onClick = { 
                     !isFormValid 
                         ? () => setIsFirstAttempt(false)
-                        : formStep === formTitles.length -1 
-                            ? () => navigate("/success") 
-                            : ()=> handleNextStep() } 
+                        : (e) => handleNextStep(e) } 
             >Proximo passo</button>
         </footer>
     </form>
