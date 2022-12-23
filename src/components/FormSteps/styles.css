@@ -1,0 +1,107 @@
+.fields-container {
+    flex-grow: 1;
+    padding-right: 5.4rem;
+}
+
+.fields-container label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.1rem;
+}
+
+.fields-container label > input,
+.fields-container label > textarea {
+    width: 100%;
+    height: 4.4rem;
+    background-color: var(--gray-100);
+    border: 0.1rem solid transparent;
+    border-radius: 0.4rem;
+    padding: 0 1rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    outline: none;
+}
+.fields-container label > span > span {
+    color: red;
+}
+.fields-container label > .field-error {
+    border: 0.1rem solid red;
+}
+
+
+/* user fields */
+.user-fields {
+    display: grid;
+    align-content: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nome nome"
+        "senha1 senha2"
+        "email nascimento";
+    row-gap: 2.6rem;
+    column-gap: 6rem;
+}
+.user-fields .nome-field {
+    grid-area: nome
+}
+.user-fields .senha1-field {
+    grid-area: senha1
+}
+.user-fields .senha2-field {
+    grid-area: senha2
+}
+.user-fields .email-field {
+    grid-area: email
+}
+.user-fields .nascimento-field {
+    grid-area: nascimento
+}
+
+
+/* adress fields */
+.address-fields {
+    display: grid;
+    align-content: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "cep rua"
+        "numero-bairro cidade"
+        "referencia referencia";
+    row-gap: 2.6rem;
+    column-gap: 6rem;
+}
+
+.address-fields .cep-field {
+    grid-area: cep
+}
+
+.address-fields .rua-field {
+    grid-area: rua
+}
+
+.address-fields .numero-bairro-field {
+    grid-area: numero-bairro;
+    display: flex;
+    gap: 0.9rem;
+}
+
+.address-fields .cidade-field {
+    grid-area: cidade
+}
+
+.address-fields .referencia-field {
+    grid-area: referencia
+}
+
+/* about fields */
+
+.sobre-field textarea {
+    min-height: 23.2rem;
+    resize: none;
+    padding: 1rem !important;
+}

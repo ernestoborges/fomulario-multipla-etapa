@@ -1,0 +1,79 @@
+.success-card {
+    max-width: 54.5rem;
+    max-height: 74.4rem;
+    width: 100%;
+    height: 100%;
+    padding: 5.9rem 4rem 3.8rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.2rem;
+
+    background-color: var(--background);
+    box-shadow: 0 0.4rem 3.1rem 0 #EEF1F5;
+    /* border: 0.2rem solid var(--gray-100); */
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+.success-card header h1 {
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+.user-data-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 1.3rem;
+    gap:2.4rem;
+}
+
+.user-data-section hr {
+    border: 0;
+    height: 0.1rem;
+    background-color: var(--gray-100);
+}
+
+.user-data-section .rua-numero-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.user-data-section .rua-numero-container label:first-child{
+    flex-grow: 4;
+}
+.user-data-section .rua-numero-container label:nth-child(2){
+    flex-grow: 1;
+}
+
+.user-data-section label {
+    color: var(--gray-400);
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0.6rem;
+    gap: 0.7rem;
+}
+
+.user-data-section output {
+    color: var(--black);
+    font-size: 2.4rem;
+    width: 100%;
+    text-align: left;
+}
+
+.new-user-button-container {
+    width: 100%;
+}
+
+.new-user-button-container .new-user-button {
+    width: 100%;
+    height: 5.4rem;
+    background-color: var(--purple);
+    color: var(--background);
+    font-size: 1.6rem;
+    font-family: "Poppin", sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}

@@ -1,12 +1,68 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+  /* changing root font size to use "rem" in scale of 1:10 (ex. 1rem = 10px) */
+  font-size: 10px;
+
+  /* colors */
+
+  --black: #000000;
+  --background: #FFFFFF;
+  --gray-50: #F8FAFB;
+  --gray-100: #F0F2F6;
+  --gray-400: #8C98A9;
+  --purple: #5357B1;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.transparent {
+  color: transparent !important;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
 }
 
 .App {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
   text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-background {
+  width: 50%;
+  height: 100%;
+  background-color: var(--gray-50);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
